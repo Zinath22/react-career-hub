@@ -1,8 +1,9 @@
 import { GrLocation } from 'react-icons/gr';
 import { HiOutlineCurrencyDollar } from 'react-icons/hi2';
+import { Link } from 'react-router-dom';
 
 const Job = ({job}) => {
-    const {logo, job_title, company_name, remote_or_onsite, location, job_type, salary} = job;
+    const {id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary} = job;
 
    
     return (
@@ -20,7 +21,9 @@ const Job = ({job}) => {
             <h2 className='flex'><HiOutlineCurrencyDollar className='text-2xl mr-2 '></HiOutlineCurrencyDollar>{salary}</h2>
           </div>
           <div className="card-actions ">
+            <Link to={`/job/${id}`}>
             <button className="btn btn-primary">View Details</button>
+            </Link>
           </div>
         </div>
       </div>
